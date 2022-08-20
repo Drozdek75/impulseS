@@ -1,7 +1,5 @@
 package com.it.impulseS.model;
 
-
-
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -50,12 +48,14 @@ public class User {
 
 	private String publicKey;
 
+	private String telephoneNumber;
+
 	public User() {
 		super();
 	}
 
 	public User(Nations nation, String name, String lastName, Date dateOfBirth, String email, Date creationDate,
-			String image, String shortMessage, String token, String publicKey) {
+			String image, String shortMessage, String token, String publicKey, String telephoneNumber) {
 		super();
 		this.nation = nation;
 		this.name = name;
@@ -67,6 +67,7 @@ public class User {
 		this.shortMessage = shortMessage;
 		this.token = token;
 		this.publicKey = publicKey;
+		this.telephoneNumber = telephoneNumber;
 	}
 
 	public Long getId() {
@@ -155,6 +156,14 @@ public class User {
 
 	public void setPublicKey(String publicKey) {
 		this.publicKey = publicKey;
+	}
+
+	public String getTelephoneNumber() {
+		return telephoneNumber;
+	}
+
+	public void setTelephoneNumber(String telephoneNumber) {
+		this.telephoneNumber = telephoneNumber;
 	}
 
 }
