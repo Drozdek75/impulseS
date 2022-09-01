@@ -5,7 +5,9 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Value;
 
@@ -16,8 +18,8 @@ public class apiKeyUtility {
 	
 	
 	public String generateMD5HashValue(String telephoneNumber) {
-		LocalDate date = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		LocalDateTime date = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuuMMddHHmmss", Locale.ITALIAN);
 		String dateF = date.format(formatter);
 		MessageDigest md;
 		byte[] hashKey = null;
