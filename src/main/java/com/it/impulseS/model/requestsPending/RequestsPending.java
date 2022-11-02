@@ -24,16 +24,20 @@ public class RequestsPending {
 
 	private String emailAddress;
 
+	private boolean ctrl = false;
+
 	public RequestsPending() {
 		super();
 	}
 
-	public RequestsPending(String telephoneNumber, int activactionCode, String apiKey, String emailAddress) {
+	public RequestsPending(String telephoneNumber, int activactionCode, String apiKey, String emailAddress,
+			boolean ctrl) {
 		super();
 		this.telephoneNumber = telephoneNumber;
 		this.activactionCode = activactionCode;
 		this.apiKey = apiKey;
 		this.emailAddress = emailAddress;
+		this.ctrl = ctrl;
 	}
 
 	public String getTelephoneNumber() {
@@ -66,6 +70,14 @@ public class RequestsPending {
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
+	}
+
+	public boolean isCtrl() {
+		return ctrl;
+	}
+
+	public void setCtrl(boolean ctrl) {
+		this.ctrl = ctrl;
 	}
 
 }

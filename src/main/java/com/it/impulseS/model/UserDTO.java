@@ -2,89 +2,47 @@ package com.it.impulseS.model;
 
 import java.util.Date;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-@Entity
-public class User {
+public class UserDTO {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@ManyToOne
-	@JoinColumn(name = "id_nation", nullable = false)
-	private Nations nation;
-
-	@Column(nullable = false)
+	private NationDTO nation;
 	private String name;
-
 	private String lastName;
-
-	@Basic
-	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
-
-	@Column(nullable = false)
 	private String email;
-
-	@Basic
-	@Temporal(TemporalType.DATE)
-	private Date CreationDate;
-
-	@Lob
-	private byte[] image;
-
+	private Date creationDate;
+	private String imageProfile;
 	private String shortMessage;
-
 	private String token;
-
-	private String publicKey;
-
+	private String apiKey;
 	private String telephoneNumber;
 
-	public User() {
+	public UserDTO() {
 		super();
 	}
 
-	public User(Nations nation, String name, String lastName, Date dateOfBirth, String email, Date creationDate,
-			String image, String shortMessage, String token, String publicKey, String telephoneNumber) {
+	public UserDTO(NationDTO nation, String name, String lastName, Date dateOfBirth, String email, Date creationDate,
+			String imageProfile, String shortMessage, String token, String apiKey, String telephoneNumber) {
 		super();
 		this.nation = nation;
 		this.name = name;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
 		this.email = email;
-		CreationDate = creationDate;
-		this.image = image;
+		this.creationDate = creationDate;
+		this.imageProfile = imageProfile;
 		this.shortMessage = shortMessage;
 		this.token = token;
-		this.publicKey = publicKey;
+		this.apiKey = apiKey;
 		this.telephoneNumber = telephoneNumber;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Nations getNation() {
+	public NationDTO getNation() {
 		return nation;
 	}
 
-	public void setNation(Nations nation) {
+	public void setNation(NationDTO nation) {
 		this.nation = nation;
 	}
 
@@ -121,19 +79,19 @@ public class User {
 	}
 
 	public Date getCreationDate() {
-		return CreationDate;
+		return creationDate;
 	}
 
 	public void setCreationDate(Date creationDate) {
-		CreationDate = creationDate;
+		this.creationDate = creationDate;
 	}
 
-	public String getImage() {
-		return image;
+	public byte[] getImageProfile() {
+		return imageProfile;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setImageProfile(byte[] imageProfile) {
+		this.imageProfile = imageProfile;
 	}
 
 	public String getShortMessage() {
@@ -152,12 +110,12 @@ public class User {
 		this.token = token;
 	}
 
-	public String getPublicKey() {
-		return publicKey;
+	public String getApiKey() {
+		return apiKey;
 	}
 
-	public void setPublicKey(String publicKey) {
-		this.publicKey = publicKey;
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
 	}
 
 	public String getTelephoneNumber() {

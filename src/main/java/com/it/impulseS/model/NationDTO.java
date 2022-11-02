@@ -1,46 +1,20 @@
 package com.it.impulseS.model;
 
-import java.util.Set;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-@Entity
-public class Nations {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class NationDTO {
 
 	private String description;
-
 	private String abbreviation;
-	
 	private String countryCode;
-	
-	@OneToMany(mappedBy = "nation")
-	private Set<User> users;
 
-	public Nations() {
+	public NationDTO() {
 		super();
 	}
 
-	public Nations(String description, String abbreviation, String countryCode) {
+	public NationDTO(String description, String abbreviation, String countryCode) {
 		super();
 		this.description = description;
 		this.abbreviation = abbreviation;
 		this.countryCode = countryCode;
-		}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getDescription() {
@@ -59,14 +33,6 @@ public class Nations {
 		this.abbreviation = abbreviation;
 	}
 
-	public Set<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-
 	public String getCountryCode() {
 		return countryCode;
 	}
@@ -74,8 +40,5 @@ public class Nations {
 	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
-	
-	
 
-	
 }
