@@ -16,5 +16,7 @@ public interface RequestPendingRepository extends JpaRepository<RequestsPending,
 	@Query(value = "SELECT r FROM RequestsPending r WHERE r.telephoneNumber =:telephone")
 	Optional<RequestsPending> findExsistTelephoneNumber(@Param("telephone") String telephone);
 	
+	Optional<RequestsPending> findByTelephoneNumber(String tn);
+	
 
 }

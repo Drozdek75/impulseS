@@ -10,18 +10,20 @@ public class StatusPendingRequest {
 	private boolean success;
 	private LocalDateTime date;
 	private String apiKey;
+	private String token;
 
 	public StatusPendingRequest() {
 		super();
 	}
 
-	public StatusPendingRequest(int codeResponse, String message, boolean success, LocalDateTime date, String apiKey) {
+	public StatusPendingRequest(int codeResponse, String message, boolean success, LocalDateTime date, String apiKey, String token) {
 		super();
 		this.codeResponse = codeResponse;
 		this.message = message;
 		this.success = success;
 		this.date = date;
 		this.apiKey = apiKey;
+		this.token = token;
 	}
 
 	public int getCodeResponse() {
@@ -63,6 +65,16 @@ public class StatusPendingRequest {
 	public void setApiKey(String apiKey) {
 		this.apiKey = apiKey;
 	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
+	
 	
 
 }

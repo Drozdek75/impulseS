@@ -6,7 +6,7 @@ import javax.persistence.Lob;
 
 public class UserDTO {
 
-	private NationDTO nation;
+	private String nation;
 	private String name;
 	private String lastName;
 	private Date dateOfBirth;
@@ -17,13 +17,15 @@ public class UserDTO {
 	private String token;
 	private String apiKey;
 	private String telephoneNumber;
+	private String password;
 
 	public UserDTO() {
 		super();
 	}
 
-	public UserDTO(NationDTO nation, String name, String lastName, Date dateOfBirth, String email, Date creationDate,
-			String imageProfile, String shortMessage, String token, String apiKey, String telephoneNumber) {
+	public UserDTO(String nation, String name, String lastName, Date dateOfBirth, String email, Date creationDate,
+			String imageProfile, String shortMessage, String token, String apiKey, String telephoneNumber,
+			String password) {
 		super();
 		this.nation = nation;
 		this.name = name;
@@ -36,13 +38,21 @@ public class UserDTO {
 		this.token = token;
 		this.apiKey = apiKey;
 		this.telephoneNumber = telephoneNumber;
+		this.password = password;
+	}
+	
+	
+	public UserDTO(String tn, String photo, String shortMessage) {
+		this.telephoneNumber= tn;
+		this.imageProfile = photo;
+		this.shortMessage = shortMessage;
 	}
 
-	public NationDTO getNation() {
+	public String getNation() {
 		return nation;
 	}
 
-	public void setNation(NationDTO nation) {
+	public void setNation(String nation) {
 		this.nation = nation;
 	}
 
@@ -86,11 +96,11 @@ public class UserDTO {
 		this.creationDate = creationDate;
 	}
 
-	public byte[] getImageProfile() {
+	public String getImageProfile() {
 		return imageProfile;
 	}
 
-	public void setImageProfile(byte[] imageProfile) {
+	public void setImageProfile(String imageProfile) {
 		this.imageProfile = imageProfile;
 	}
 
@@ -124,6 +134,14 @@ public class UserDTO {
 
 	public void setTelephoneNumber(String telephoneNumber) {
 		this.telephoneNumber = telephoneNumber;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
